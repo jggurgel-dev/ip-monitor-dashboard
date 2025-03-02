@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Monitoramento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e2dada;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans transition-colors duration-300" id="body">
+    <div class="container mx-auto p-6">
+        
+        <div class="flex justify-between mb-8 items-center">
+            <div class="bg-teal-500 text-white p-6 rounded-lg shadow-lg text-center transition duration-300 ease-in-out hover:scale-105">
+                <p class="text-3xl font-bold">ONLINE</p>
+                <p id="online-count" class="text-4xl">0</p>
+            </div>
+            
+            <h1 class="page-title">Dashboard de Monitoramento</h1>
+            <div class="bg-orange-500 text-white p-6 rounded-lg shadow-lg text-center transition duration-300 ease-in-out hover:scale-105">
+                <p class="text-3xl font-bold">OFFLINE</p>
+                <p id="offline-count" class="text-4xl">0</p>
+            </div>
+        </div>
+
+        <div class="flex justify-center space-x-4 mb-6">
+            <button id="filter-all" class="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600 filter-button active-filter">
+                Todos
+            </button>
+            <button id="filter-online" class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 filter-button">
+                Online
+            </button>
+            <button id="filter-offline" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 filter-button">
+                Offline
+            </button>
+        </div>
+
+        <div id="ip-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
+           
+        </div>
+        
+        <div class="flex justify-center space-x-4">
+            <button id="prev-page" class="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
+                Anterior
+            </button>
+            <button id="next-page" class="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
+                Próximo
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
