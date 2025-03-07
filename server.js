@@ -48,7 +48,7 @@ async function sendTelegramMessage(ip, status) {
     const message = `⚠️ Alerta de Status!\nLoja: ${description}\nIP: ${ip}\nStatus: ${status === 'online' ? '✅ ONLINE' : '❌ OFFLINE'}`;
 
     try {
-        await axios.post(`https:
+        await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
             chat_id: TELEGRAM_CHAT_ID,
             text: message
         });
@@ -102,5 +102,5 @@ app.get('/api/ip-status', async (req, res) => {
 app.use(express.static('public'));
 
 app.listen(PORT, () => {
-    console.log(`Servidor iniciado em http:
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
